@@ -1,10 +1,11 @@
 package org.example.dominio;
 
-public class Students {
-    private String name;
-    private String id;
+public class Registration {
 
-    public Students(String name, String id) {
+    protected String name;
+    protected String id;
+
+    public Registration(String name, String id) {
         this.name = name;
         this.id = id;
     }
