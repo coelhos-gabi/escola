@@ -1,9 +1,9 @@
 package org.example;
 
 import org.example.dominio.Init;
-import org.example.screen.ReadGradeScreen;
-import org.example.screen.SaveGradeScreen;
+import org.example.screen.grade.SaveGradeScreen;
 import org.example.screen.StudentDataScreen;
+import org.example.screen.WhichSubjectScreen;
 
 import java.util.Scanner;
 
@@ -25,7 +25,7 @@ public class App{
     public static void main( String[] args ){
         Scanner scanner = new Scanner(System.in);
         Init.executar();
-        int option;
+        int option = 0;
         do {
             System.out.println("*********** Escola Toca do Coelho ***********");
             System.out.println("O que deseja fazer?");
@@ -33,20 +33,29 @@ public class App{
             System.out.println("2 - Acessar notas");
             System.out.println("3 - Registrar notas no sistema");
             System.out.println("0 - Sair ");
-            option = scanner.nextInt();
+            try {
+                String stringOption = scanner.next();
+                option = Integer.parseInt(stringOption);
 
-            switch (option) {
-                case 1:
-                    StudentDataScreen.executar(scanner);
-                    break;
-                case 2:
-                    ReadGradeScreen.executar(scanner);
-                    break;
-                case 3:
-                    SaveGradeScreen.executar(scanner);
-                    break;
+                switch (option) {
+                    case 1:
+                        StudentDataScreen.run(scanner);
+                        break;
+                    case 2:
+                        WhichSubjectScreen.run(scanner);
+                        break;
+                    case 3:
+                        SaveGradeScreen.run(scanner);
+                        break;
+                    case 0:
+                        System.exit(1);
+                        break;
+                    default:
+                        System.out.println("Opção inválida");
+                }
+            }catch (Exception exception){
+                System.out.println("Entrada inválida, tente novamente");
             }
         }while(option!=0);
     }
-
 }

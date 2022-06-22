@@ -9,7 +9,7 @@ import org.example.service.InsertGrades;
 import java.util.Scanner;
 
 public class StudentDataScreen {
-    public static void executar(Scanner scanner){
+    public static void run(Scanner scanner){
         System.out.println("Insira a matrícula do aluno:");
         String id = scanner.next();
 

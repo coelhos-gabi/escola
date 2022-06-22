@@ -1,6 +1,6 @@
 package org.example.service;
 
-import org.example.screen.SaveGradeScreen;
+import org.example.screen.grade.SaveGradeScreen;
 
 import java.util.Scanner;
 
@@ -11,7 +11,7 @@ public class InsertGrades {
         System.out.println("2 - Não");
         int option = scanner.nextInt();
         if(option == 1){
-            SaveGradeScreen.executar(scanner);
+            SaveGradeScreen.run(scanner);
         }else{
             return;
         }
