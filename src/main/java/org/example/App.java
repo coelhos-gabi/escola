@@ -1,6 +1,7 @@
 package org.example;
 
 import org.example.dominio.Init;
+import org.example.dominio.OpcaoTela;
 import org.example.screen.grade.SaveGradeScreen;
 import org.example.screen.StudentDataScreen;
 import org.example.screen.WhichSubjectScreen;
@@ -29,10 +30,10 @@ public class App{
         do {
             System.out.println("*********** Escola Toca do Coelho ***********");
             System.out.println("O que deseja fazer?");
-            System.out.println("1 - Cadastrar aluno");
-            System.out.println("2 - Acessar notas");
-            System.out.println("3 - Registrar notas no sistema");
-            System.out.println("0 - Sair ");
+            for(OpcaoTela opcaoTela : OpcaoTela.values()){
+                System.out.println(opcaoTela.getCode() + " - "+opcaoTela.getLabel());
+            }
+
             try {
                 String stringOption = scanner.next();
                 option = Integer.parseInt(stringOption);

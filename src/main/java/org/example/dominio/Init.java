@@ -5,25 +5,19 @@ import org.example.repository.StudentsRepository;
 
 public class Init {
     public static void executar() {
-        Student student1 = new Student("Jonas","11");
-        Student student2 = new Student("Pamela","22");
-        Student student3 = new Student("Gabriela", "33");
-        Student student4 = new Student("José","44");
-        Student student5 = new Student("Amanda","55");
+        Student student1 = new Student("Jonas","11", new Responsaveis("André","432321234","andre@email.com"));
+        Student student2 = new Student("Pamela","22",new Responsaveis("Carlos", "765387524","carlos@email.com"));
         StudentsRepository.getInstance().save(student1);
         StudentsRepository.getInstance().save(student2);
-        StudentsRepository.getInstance().save(student3);
-        StudentsRepository.getInstance().save(student4);
-        StudentsRepository.getInstance().save(student5);
 
-        Grade grade1 = new Grade(Subject.MATH,student3,9.0);
-        Grade grade2 = new Grade(Subject.MATH,student3,7.0);
-        Grade grade3 = new Grade(Subject.MATH,student3,8.0);
-        Grade grade4 = new Grade(Subject.MATH,student3,10.0);
-        Grade grade5 = new Grade(Subject.BIOLOGY,student3,3.0);
-        Grade grade6 = new Grade(Subject.BIOLOGY,student3,4.0);
-        Grade grade7 = new Grade(Subject.BIOLOGY,student3,2.0);
-        Grade grade8 = new Grade(Subject.BIOLOGY,student3,2.0);
+        Grade grade1 = new Grade(Subject.MATH,student1,9.0);
+        Grade grade2 = new Grade(Subject.MATH,student1,7.0);
+        Grade grade3 = new Grade(Subject.MATH,student1,8.0);
+        Grade grade4 = new Grade(Subject.MATH,student1,10.0);
+        Grade grade5 = new Grade(Subject.BIOLOGY,student1,3.0);
+        Grade grade6 = new Grade(Subject.BIOLOGY,student1,4.0);
+        Grade grade7 = new Grade(Subject.BIOLOGY,student1,2.0);
+        Grade grade8 = new Grade(Subject.BIOLOGY,student1,2.0);
 
         GradeRepository.getInstance().save(grade1);
         GradeRepository.getInstance().save(grade2);

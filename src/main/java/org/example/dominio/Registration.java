@@ -14,7 +14,6 @@ public class Registration {
         return name;
     }
 
-
     public String getId() {
         return id;
     }
